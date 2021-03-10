@@ -6,7 +6,10 @@ module.exports = {
   listComments: async function(req, res, next) {
     // 1.2
     let page = parseInt(req.query.page);
-    let limit = req.query.limit;
+    let limit = parseInt(req.query.limit);
+    
+    page = page > 0 ? parseInt(page) : 0;
+    limit = limit ? parseInt(limit) : 10;
 
 
     let comments = await commentsModel.find({page,limit})

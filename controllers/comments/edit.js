@@ -16,7 +16,7 @@ module.exports = {
    editCommentPatch: async function (req, res) {
     
     console.log("ejecuta createcoment  :");
-    const id = req.params.id;
+    const id =  req.params.id;
     await commentsModel.update(id, req.body);
     res.redirect(301, '/comments');
   } 

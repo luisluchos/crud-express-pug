@@ -1,24 +1,24 @@
 extends ../layout
 
 block content
-  h1 Creata a new comment
-  form(method="POST")
+  h1 Create a new comment
+  form(method="POST" class="form-group")
     .row
       .col
         label(for="gameId")="Game id"
-        input#gameId(type="number" name="gameId")
+        input#gameId(type="number" name="gameId" class="form-control")
     .row
       .col
         label(for="name")="name"
-        input#commentName(type="text" name="name")
+        input#commentName(type="text" name="name" class="form-control")
     .row
       .col
         label(for="email")="email"
-        input#commentEmail(type="email" name="email")
+        input#commentEmail(type="email" name="email" class="form-control")
     .row
       .col
         label(for="body")="Body"
-        textarea#commentBody(name="body")
+        textarea#commentBody(name="body" class="form-control")
     .row
       .col  
-        button(role="submit")="Create comment"
+        button(role="submit" class="btn btn-primary")="Create comment"
