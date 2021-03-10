@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  h1 Creata a new comment
+  form(method="POST")
+    .row
+      .col
+        label(for="gameId")="Game id"
+        input#gameId(type="number" name="gameId")
+    .row
+      .col
+        label(for="name")="name"
+        input#commentName(type="text" name="name")
+    .row
+      .col
+        label(for="email")="email"
+        input#commentEmail(type="email" name="email")
+    .row
+      .col
+        label(for="body")="Body"
+        textarea#commentBody(name="body")
+    .row
+      .col  
+        button(role="submit")="Create comment"

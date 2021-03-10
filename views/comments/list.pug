@@ -1,0 +1,15 @@
+extends ../layout
+
+include ../mixins/comment-snippet
+
+block content
+  button(class="btn btn-warning" type="button" onclick="location.href='?page=1&limit=10'") first
+  button(class="btn btn-warning" type="button" onclick=`location.href='?page=${paginator+1}&limit=10'`) next
+  button(class="btn btn-warning" type="button" onclick=`location.href='?page=${paginator-1}&limit=10'`) prev
+  button(class="btn btn-warning" type="button" onclick="location.href='?page=2'") last
+  h1= title
+  button(class="btn btn-primary" type="button" onclick="location.href='comments/create'") Add Comment
+  .container
+    each comment in listComments
+      +commentSnippet(comment)
+      

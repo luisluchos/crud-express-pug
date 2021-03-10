@@ -1,0 +1,11 @@
+mixin commentSnippet(comment)
+  .comment-snippet
+    a(href="/comments/" + comment.id) 
+     h3= comment.name
+    | By 
+    small.text-muted= `${comment.email}`
+    p.text-truncate= comment.body
+    br
+    .pull-right
+      button(class="btn btn-error" onclick=`location.href="comments/delete/${comment.id}"`) Delete comment
+      button(class="btn btn-success" onclick=`location.href="comments/${comment.id}/edit"`) Edit comment

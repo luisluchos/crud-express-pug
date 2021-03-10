@@ -1,0 +1,16 @@
+extends ../layout
+
+include ../mixins/comment-snippet
+
+block content
+  
+  h1= `Comment #${comment.id}: ${comment.name}`
+  .container
+    .row
+      .col
+        h3= comment.email
+    .row
+      .col= comment.body
+    .row
+      .col=`Comment for gameId: ${comment.gameId}`
+        

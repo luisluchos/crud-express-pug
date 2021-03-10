@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  h1 Edit comment
+  form(method="POST")
+    .row
+      .col
+        label(for="gameId")="Game id"
+        input#gameId(type="number" name="gameId" value=commentFound.gameId )
+    .row
+      .col
+        label(for="name")="name"
+        input#commentName(type="text" name="name" value=commentFound.name)
+    .row
+      .col
+        label(for="email")="email"
+        input#commentEmail(type="email" name="email" value=commentFound.email)
+    .row
+      .col
+        label(for="body")="Body"
+        textarea#commentBody(name="body")= commentFound.body
+    .row
+      .col  
+        button(role="submit")="Edit comment"
